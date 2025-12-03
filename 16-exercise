@@ -1,0 +1,34 @@
+//Basic task
+// 1. find the file extension of the file (e.g. report.doc > doc)
+// 2. tell the user if the file is a docu or an image
+// Doc:   xls, doc
+// image: png, bmp, jpg
+
+const prompt = require("prompt-sync")();
+let fileNameEntered = prompt("Enter a file name: ");
+let dotIndex = fileNameEntered.lastIndexOf(".");
+let docExtension = " ";
+
+if (dotIndex != -1) {
+    docExtension = fileNameEntered.slice(dotIndex + 1);
+
+    docExtension = docExtension.toLowerCase();
+
+    if (docExtension == "doc" || docExtension == "xls") {
+        console.log("Your file is a document");
+    } else if(docExtension == "png" || docExtension == "bmp" || docExtension == "jpg")
+    {
+        console.log("Your file is a image");
+    }
+    console.log(docExtension);
+
+    // can use endWith
+
+    // use split
+    let chunks = fileNameEntered.split(".");
+    let docExtension = chunks[chunks.length-1];
+
+}
+
+// only use a FOR loop and indexing each character
+// - string concatation (combine two strings)
